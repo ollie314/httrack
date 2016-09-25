@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT([httrack], [3.48.22], [roche+packaging@httrack.com], [httrack], [http://www.httrack.com/])
+AC_INIT([httrack], [3.48.24], [roche+packaging@httrack.com], [httrack], [http://www.httrack.com/])
 AC_COPYRIGHT([
 HTTrack Website Copier, Offline Browser for Windows and Unix
 Copyright (C) 1998-2015 Xavier Roche and other contributors
@@ -160,7 +160,7 @@ AC_CHECK_LIB(crypto, EVP_get_digestbyname,
 	]
 	)
 LIBS="$LIBS $OPENSSL_LIBS"
-AC_CHECK_LIB(ssl, SSL_library_init,
+AC_CHECK_LIB(ssl, SSL_CTX_new,
 	[
 	OPENSSL_LIBS="$OPENSSL_LIBS -lssl"
 	AC_DEFINE(HTS_USEOPENSSL, 1, [Check for OpenSSL])
